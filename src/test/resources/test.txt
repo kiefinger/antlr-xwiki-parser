@@ -1,0 +1,57 @@
+
+
+{{box cssClass="floatinginfobox" title="**Contents**"}}
+{{toc start=2 /}}
+{{/box}}
+
+= HOW-TO setup a VDI for XFrame 2.x Development =
+
+This How-To explains all the preparation steps, that are neccessary to start XFrame 2.x development.
+
+== HOW-TO Request VDI ==
+
+**Step #1. Request VDI**
+If you don't have a VDI, start to request a VDI. See: [[See: How to request a VDI>>http://ucspace.intranet.unicredit.eu/sites/IRIDE/Wiki/faq-vdi.aspx]]
+
+**Step #2. Request Developer Role**
+You need to request a Develper Role to be able to install Development Tools
+Open Archimede and request //GGPT4DDEVROLESWCE//
+**Step #3. Request Local Admin Rights**
+You need to request a Local Admin Rights to be able to start Eclipse. 
+Open Archimede and request //GGPPMEDEVUSER//
+{{info}}Note that it takes one day until this right is available on the VDI, after the Archimed request has completed.{{/info}}
+
+For more information see: 
+
+* [[Handbook for VDI Persistent (English version)>>http://ucspace.intranet.unicredit.eu/sites/IRIDE/Shared%20Documents/VDI_Persistent_HD0X_ENG.pdf]]
+* [[Handbook for VDI Persistent (Italian version)>>http://ucspace.intranet.unicredit.eu/sites/IRIDE/Shared%20Documents/VDI_Persistent_HD0X_ITA.pdf]]
+
+== Install necessary software ==
+
+Step #1: Install PMD (find the Manual [[here>>attach:PMD_User_Manual_v1.4.docx]])
+
+1. Open the Software-Center on VDI
+1. Install //PME_PRIVILEGEDESKTOP// or the latest one. Search for "PME_PRIVILEGEDESKTOP" in Software Center and choose the latest version
+1. Restart Sytem
+
+Step #2: Install IBM WAS 8.5
+1. Open the Software-Center on VDI
+1. Install //WAS85_64BIT-02_00 - WebSphere Application Server v. 8.5 Test Environment Core//. Search for "WAS85_64BIT" in Software Center and choose the latest version
+
+
+
+Step #3: Install IBM WAS v9
+1. Open the Software-Center on VDI
+2. Install //WAS90_64BIT_02-00 - WebSphere Application Server v. 9.0 Base - //. Search for "WAS90_64BIT" in Software Center and choose the latest version
+
+Step #4: Install Eclipse
+
+1. Open the Software-Center on VDI
+1. Install //ECLIPSE_XFR2_APP_06-01 - ECLIPSE-IDE for XFrame 2.0 Java application Development//. Search for "ECLIPSE_XFR2_APP" in Software Center and choose the latest version
+
+== POST-Installation steps ==
+
+
+== Next Steps ==
+
+Continue with the [[How-To setup a new workspace>>XFrame20MavenCreateNewWorkspace]]

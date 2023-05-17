@@ -1,0 +1,7 @@
+[user]
+	name = josef.kiefinger@gmx.de
+	email = josef.kiefinger@gmx.de
+[http]
+	sslVerify = false
+[safe]
+	directory = *
