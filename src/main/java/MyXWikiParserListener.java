@@ -1,4 +1,4 @@
-public class XwikiListener extends XWikiParserBaseListener {
+public class MyXWikiParserListener extends XWikiParserBaseListener {
 
 	@Override
 	public void enterDocument(XWikiParser.DocumentContext ctx) {

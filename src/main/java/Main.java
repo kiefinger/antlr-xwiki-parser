@@ -23,7 +23,7 @@ public class Main {
 
 		// Walk it and attach our listener
 		ParseTreeWalker walker = new ParseTreeWalker();
-		XwikiListener listener = new XwikiListener();
+		MyXWikiParserListener listener = new MyXWikiParserListener();
 		walker.walk(listener, context);
 	}
 }
