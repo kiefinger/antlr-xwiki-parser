@@ -9,15 +9,15 @@ H4: '====';
 H5: '=====';
 H6: '======';
 
-BOLD: '**';
 ITALIC: '//';
 
 NL: '\r'?'\n' ;
 
+
 BOX_OPEN              : '{{box' .*? '}}'      -> skip;
 BOX_CLOSE             : '{{/box}}'            -> skip;
 TOC_OPEN              : '{{toc';
-BLOCK_CLOSE           : '}}';
+BLOCK_CLOSE           : '/'? '}}';
 
 OPEN_DSQBRACE         : '[['                  -> pushMode(LINK);
 OPEN_SQBRACE          : '[';
@@ -25,8 +25,8 @@ CLOSE_SQBRACE         : ']';
 CHAR_PIPE             : '|';
 
 CHAR_STAR             : '*';
-CHAR_HASH             : '#';
 CHAR_EQUAL            : '=';
+CHAR_DOT              : '.';
 
      
 INFO_OPEN
@@ -76,11 +76,12 @@ CODE_BODY
     
 mode LINK;
 
-LINKID                    : ID_LETTER+; 
-LINKCHARACTER             : ID_LETTER  | CHARS ; 
-LINKCHAR_PIPE             : '|';
-LINKDSHIFTRIGHT           : '>>';
-LINKSPACE: ' ' | '\t';
+LINKID                : ID_LETTER+; 
+LINKCHARACTER         : ID_LETTER  | CHARS ; 
+LINKCHAR_PIPE         : '|';
+LINKDSHIFTRIGHT       : '>>';
+LINKSPACE             : ' ' | '\t';
+LINKTEXT_IMAGE        : 'image:';
                 
 CLOSE_DSQBRACE
     : ']]'        -> popMode
@@ -91,11 +92,11 @@ CLOSE_DSQBRACE
  */
 mode TABLE;
 
-TABLEID                    : ID_LETTER+; 
-TABLECHAR_EQUAL            : '='            -> skip;
-TABLECHAR_PIPE             : '|';
-TABLECHARACTER             : ID_LETTER  | CHARS ; 
-TABLESPACE                 : ' ' | '\t';
+TABLEID               : ID_LETTER+; 
+TABLECHAR_EQUAL       : '='            -> skip;
+TABLECHAR_PIPE        : '|';
+TABLECHARACTER        : ID_LETTER  | CHARS ; 
+TABLESPACE            : ' ' | '\t';
 
 TABLE_NEWLINE
     : TABLE_NL TABLECHAR_PIPE
