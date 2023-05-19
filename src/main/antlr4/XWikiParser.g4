@@ -4,7 +4,7 @@ options {
   tokenVocab=XWikiLexer;
 }
 
-document: line? (NL line? | info)* ;
+document: line? (NL line? | info | code | table)* ;
 line: macro | horizontal_line | list | heading | paragraph ;
 
 
@@ -39,6 +39,11 @@ value: ID | STRING;
 info
     :  INFO_OPEN INFO_BODY
     ;
+    
+
+code
+    :  CODE_OPEN CODE_BODY
+    ;    
 
 /**box
     :  BOX_OPEN BOX_BODY
@@ -50,24 +55,27 @@ paragraph: content;
 content: (formatted | link)+;
 
 /* links */
-link: external_link | internal_link;
+link:  internal_link;
 
-external_link: OPEN_SQBRACE external_link_uri (CHAR_PIPE external_link_title)? CLOSE_SQBRACE;
-internal_link: OPEN_DSQBRACE internal_link_ref (CHAR_PIPE internal_link_title)? CLOSE_DSQBRACE ;
-
-external_link_uri: CHARACTER+;
-external_link_title: plain;
-internal_link_ref: plain;
-internal_link_title: plain;
+internal_link: OPEN_DSQBRACE internal_link_title LINKDSHIFTRIGHT internal_link_ref (LINKCHAR_PIPE internal_link_anchor)? CLOSE_DSQBRACE ;
+internal_link_title: (LINKID |  LINKCHARACTER | LINKSPACE)+;
+internal_link_ref: (LINKID |  LINKCHARACTER)+;
+internal_link_anchor: (LINKID |  LINKCHARACTER | LINKSPACE);
+linkplain: (LINKID |  LINKCHARACTER | LINKSPACE)+;
 
 /* bold & italic */
-formatted: bold_italic | bold | italic | plain;
+formatted: bold | italic | plain;
 
-bold_italic: BOLD_ITALIC plain BOLD_ITALIC;
 bold: BOLD plain BOLD;
 italic: ITALIC plain ITALIC;
 
 /* Plain text */
 plain: (ID | STRING | CHARACTER | SPACE)+;
+
+table: TABLE_OPEN tableline+ ;
+tableline:  tablecol (TABLECHAR_PIPE tablecol)* (TABLE_NL|TABLE_END);
+tablecol:  table_plain NL?;
+table_plain: (TABLEID | TABLECHARACTER | TABLESPACE | NL)+;
+
 
 

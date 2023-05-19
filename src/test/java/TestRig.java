@@ -14,7 +14,8 @@ public class TestRig {
 		
 	}
 
-	static String [] args = { "XWiki",  "document", "-tokens" , "test.txt"};
+	static String [] args1 = { "XWiki",  "document", "-tokens" , "test.txt"};
+	static String [] args2 = { "XWiki",  "document", "-tree" , "test.txt"};
 	@Test
 	public void outputTokens() throws Exception {
 		try {
@@ -22,7 +23,9 @@ public class TestRig {
 			System.err.println("Warning: TestRig moved to org.antlr.v4.gui.TestRig; calling automatically");
 			try {
 				Method mainMethod = testRigClass.getMethod("main", String[].class);
-				mainMethod.invoke(null, (Object) args);
+				mainMethod.invoke(null, (Object) args1);
+				mainMethod.invoke(null, (Object) args2);
+
 			} catch (Exception nsme) {
 				System.err.println("Problems calling org.antlr.v4.gui.TestRig.main(args)");
 			}

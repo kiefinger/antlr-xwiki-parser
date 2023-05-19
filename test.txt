@@ -2,7 +2,28 @@
 {{toc start=2}}
 {{/box}}
 
+|=TableHeader|=Header2|=Header3
+|text|incomplete table
+text
+
+
+
+{{code}}
+class Name {
+     public main ( args [] ) {
+     }
+{{/code}}
+
+
 = Header 1 sample =
+
+[[How: to Internal>>PageName]]
+[[How to SpaceInternal>>Space2\.1.Page|anchor="abc"]]
+[[How to external>>https://www.google.de]]
+**Impoant**
+This is a //Italic// text. 
+
+This is a mix of **important** and //italic// text with 
 
 This is a normal ntext
 
