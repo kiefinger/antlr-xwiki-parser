@@ -77,8 +77,8 @@ CODE_BODY
 mode LINK;
 
 LINKID                : ID_LETTER+; 
-LINKCHARACTER         : ID_LETTER  | CHARS ; 
 LINKCHAR_PIPE         : '|';
+LINKCHARACTER         : ID_LETTER  | CHARS | CHAR_EQUAL ; 
 LINKDSHIFTRIGHT       : '>>';
 LINKSPACE             : ' ' | '\t';
 LINKTEXT_IMAGE        : 'image:';
