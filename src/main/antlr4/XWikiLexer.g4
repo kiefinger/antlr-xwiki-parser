@@ -97,12 +97,15 @@ TABLECHAR_PIPE             : '|';
 TABLECHARACTER             : ID_LETTER  | CHARS ; 
 TABLESPACE                 : ' ' | '\t';
 
-TABLE_NL
-    : NL TABLECHAR_PIPE
+TABLE_NEWLINE
+    : TABLE_NL TABLECHAR_PIPE
     ;
+
+TABLE_NL
+    :   '\r'?'\n' ; 
+
     
 TABLE_END
     : NL NL -> popMode
     ;  
-    
     

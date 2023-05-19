@@ -73,9 +73,9 @@ italic: ITALIC plain ITALIC;
 plain: (ID | STRING | CHARACTER | SPACE)+;
 
 table: TABLE_OPEN tableline+ ;
-tableline:  tablecol (TABLECHAR_PIPE tablecol)* (TABLE_NL|TABLE_END);
-tablecol:  table_plain NL?;
-table_plain: (TABLEID | TABLECHARACTER | TABLESPACE | NL)+;
+tableline:  tablecol (TABLECHAR_PIPE tablecol)* (TABLE_NEWLINE|TABLE_END);
+tablecol:  table_plain ;
+table_plain: (TABLEID | TABLECHARACTER | TABLESPACE | TABLE_NL )+;
 
 
 
