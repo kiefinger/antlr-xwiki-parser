@@ -1,47 +1,40 @@
-{{box cssClass=b}}
-{{toc start=2 /}}
-{{/box}}
+{{info}}&#xD;
+Status: under work&#xD;
+{{/info}}&#xD;
+&#xD;
+{{box cssClass=&quot;floatinginfobox&quot; title=&quot;**Contents**&quot;}}&#xD;
+{{toc start=2 depth=4/}}&#xD;
+{{/box}}&#xD;
+&#xD;
+How to manage a Unix Server!&#xD;
 
-= Header #1 sample =
+//domain// This name is used as the container. E.g. //customers// results in {{code}}http://localhost:&lt;port&gt;/&lt;app&gt;/customers{{/code}}. It should be a plural word. &#xD;
+//domainType// is used as primary data type. E.g. the values //Customer// results a Domain Class //Customer//. It should be a singular word. &#xD;
+
+= Header Sample =
+
+This is a //Italic// text3%
+This is a //Italic// text4&#xD;
+This is a //Italic// text5&#xD;
+
+{{code}}&#xD;
+/* comment &#xD;
+*/&#xD;
+class Name {&#xD;
+     public main ( args [] ) {&#xD;
+     a.b();&#xD;
+     }&#xD;
+{{/code}}&#xD;
+
 == Step #2 - Developer ==
 
-This is a normal text like ${aam}
+This is a normal text like ${abc} with a link [[How to Add Abc>>Space\ 5.0.Page||anchor="abc"]]
 **Important**
+This is a //Italic// text2. 
 This is a //Italic// text. 
-This is a mix of **important ${app} ** and //italic// text with 
 
 
-
-|=TableHeader|=Header2|=Header3
-|text|incomplete table
-text
-|next line|next lne 2| next line3
-
-
-
-{{code}}
-class Name {
-     public main ( args [] ) {
-     }
-{{/code}}
-
-
-
-
-[[How: to Internal>>PageName]]
-[[How to Add Abc>>Space\ 5.0.Page|anchor="abc"]]
-[[How to external>>https://www.google.de]]
-
-See this image: [[image:fielname]]
-
-{{info}}This is a info text in more
- then on line{{/info}}
- 
-Step # 1. Request Developer Role
-
-
-
-=== Step #3 - Request Developer Role3 ===
+== Step #3 - Request Developer Role3 ==
 
 * List 1
 ** List 2
@@ -51,6 +44,31 @@ Step # 1. Request Developer Role
 11. Ordered List 2
 111. Ordered List 3
 
+=== Links ===
+
+[[How: to Internal>>PageName]]
+[[How to Add Abc>>Space\ 5.0.Page||anchor="abc"]]
+[[Service parameter&gt;&gt;||anchor=&quot;HTechnicalInfo&quot;]]
+[[How to external>>https://www.google.de]]
+
+See this image: [[image:filename.jpg]]
+
+{{info}}This is a info text in more
+ then on line
+{{/info}}
 
 
+=== Tables ===
 
+|=TableHeader|=Header2|=Header 5.x
+|text|incomplete table
+text
+|next line|next lne 2| next line3
+line4
+line5&#xD;
+&#xD;
+
+=== Attachments ===
+
+text
+text3 Text4

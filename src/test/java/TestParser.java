@@ -26,7 +26,7 @@ public class TestParser {
 
 		// Walk it and attach our listener
 		ParseTreeWalker walker = new ParseTreeWalker();
-		MyXWikiParserListener listener = new MyXWikiParserListener();
-		walker.walk(listener, context);		
+		MyXWikiParserVisitor visitor = new MyXWikiParserVisitor();
+		visitor.visit(context);
 	}
 }

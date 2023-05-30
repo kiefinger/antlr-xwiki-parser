@@ -9,13 +9,10 @@ import org.junit.jupiter.api.Test;
 
 public class TestRig {
 	
-	public static void main(String[] args) {
-		
-		
-	}
-
-	static String [] args1 = { "XWiki",  "document", "-tokens" , "test.txt"};
-	static String [] args2 = { "XWiki",  "document", "-tree" , "test.txt"};
+	static String fileName =  "test.txt";
+	
+	static String [] args1 = { "XWiki",  "document", "-tokens" , fileName};
+	static String [] args2 = { "XWiki",  "document", "-tree" , fileName};
 	@Test
 	public void outputTokens() throws Exception {
 		try {
